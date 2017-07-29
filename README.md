@@ -7,6 +7,7 @@ This is a great design pattern if you want to gRPC for most of your APIs, but st
 1. Install swagger extras (`goget.sh`)
 2. Write the `service.proto` using `import "google/api/annotations.proto";`
 3. Compile your services to the target language
+   - Use the default target in the Makefile, `make`
    - Known issue generating python services https://github.com/grpc/grpc/issues/4961
 4. Install `go` depedencies:
    - `export GOPATH=$(pwd)/gopath`
