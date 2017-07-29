@@ -16,11 +16,15 @@ This is a great design pattern if you want to gRPC for most of your APIs, but st
 
 1. Start the proxy gateway
    - `go run main.go`
-2. Start the backend gRPC service
-   - python3 service_impl.py
-3. Access as a client:
-   - `python3 service_client.py` which accesses the backend gRPC service directly
-   - `curl -X POST -H "Content-Type: applicalhost:50052/v1/example/echo" -d '{}'`
+2. Run the python server and client:
+   - Add the generated python code to your python path
+     - `export PYTHONPATH=gen/python`
+   - Start the backend gRPC service
+     - python3 service_impl.py
+   - Run the gRPC client
+     - `python3 service_client.py` which accesses the backend gRPC service directly
+3. Access via HTTP
+   - `curl -X POST -H "Content-Type: application/json" "http://localhost:50052/v1/example/echo" -d '{}'`
 
 # See the Swagger Docs (using Docker)
  - Run `./docs.sh`, which starts a docker container for swagger-ui
